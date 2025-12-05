@@ -15,7 +15,8 @@
         
         <h1 class="site-logo">Регистрация</h1>
         
-        <form action="confirm.html" method="GET" class="login-form">
+        <form action="confirm.html" method="POST" class="login-form">
+            <!-- Backend  заменит action на реальный маршрут -->
             
             <div class="form-group">
                 <label for="city">Город</label>
@@ -38,37 +39,71 @@
 
             <div class="form-group">
                 <label for="name">ФИО</label>
-                <input type="text" id="name" required placeholder="Тлеужанова Инна Рахымовна">
+                <input 
+                type="text" 
+                id="name" 
+                name="name"
+                placeholder="Тлеужанова Инна Рахымовна"
+                required>
             </div>
 
             <div class="form-group">
                 <label for="organization">Организация / Учреждение</label>
-                <input type="text" id="organization" required placeholder="Название организации">
+                <input 
+                type="text" 
+                id="organization"  
+                name="organization"
+                placeholder="Название организации"
+                required>
             </div>
             
             <div class="form-group">
                 <label for="district">Район (обязательно для Организатора)</label>
-                <input type="text" id="district" placeholder="Например, Бостандыкский">
+                <input 
+                type="text" 
+                id="district" 
+                name="district"
+                placeholder="Например, Бостандыкский">
             </div>
 
             <div class="form-group">
                 <label for="phone">Телефон</label>
-                <input type="tel" id="phone" required placeholder="+7 (700) 000-00-00">
+                <input 
+                type="tel" 
+                id="phone" 
+                name="name"
+                placeholder="+7 (700) 000-00-00"
+                required >
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" required placeholder="email@culturemap.kz">
+                <input 
+                type="email" 
+                id="email" 
+                name="email"
+                placeholder="email@culturemap.kz"
+                required >
             </div>
 
             <div class="form-group">
                 <label for="login">Логин</label>
-                <input type="text" id="login" required placeholder="Уникальный логин">
+                <input 
+                type="text" 
+                id="login" 
+                name="login"
+                placeholder="Уникальный логин"
+                required >
             </div>
 
             <div class="form-group">
                 <label for="password">Пароль</label>
-                <input type="password" id="password" required placeholder="Не менее 6 символов">
+                <input 
+                type="password" 
+                id="password" 
+                name="password"
+                placeholder="Не менее 6 символов"
+                required >
             </div>
 
             <button type="submit" class="auth-btn">Зарегистрироваться</button>

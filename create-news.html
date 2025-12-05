@@ -15,16 +15,16 @@
             <div class="sidebar-top">
                 <a href="#" class="logo">CultureMap.kz</a>
                 <nav class="sidebar-nav">
-                    <li><a href="dashboard-superadmin.html#main-panel">🏛 Главная (Управление)</a></li>
-                    <li class="active"><a href="dashboard-superadmin.html#news-panel">📰 Новости</a></li>
-                    <li><a href="dashboard-superadmin.html#analytics-panel">📈 Аналитика</a></li>
-                    <li><a href="dashboard-superadmin.html#surveys-panel">📋 Опросы</a></li>
+                    <li><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
+                    <li class="active"><a href="dashboard-superadmin.html#news-panel">Новости</a></li>
+                    <li><a href="dashboard-superadmin.html#analytics-panel">Аналитика</a></li>
+                    <li><a href="dashboard-superadmin.html#surveys-panel">Опросы</a></li>
                 </nav>
             </div>
             <div class="user-profile-card">
                 <h3>Глобальный Админ</h3>
                 <p>Контроль: Все города</p>
-                <span class="role-tag" style="background: #e62e2e; color: white;">SuperAdmin</span>
+                <span class="role-tag bg-danger-light text-white">SuperAdmin</span>
                 <a href="login.html" class="logout-btn">Выйти</a>
             </div>
         </aside>
@@ -32,28 +32,45 @@
         <main class="main-content">
             <h1>Создание/Редактирование новости</h1>
 
-            <div class="full-panel" style="max-width: 900px; margin: 0 auto 30px auto;">
+            <div class="full-panel max-w-900 m-auto m-b-30">
                 <form action="#" method="POST" enctype="multipart/form-data">
+                    <!-- Backend  заменит action на реальный маршрут -->
                     
                     <div class="form-group">
                         <label for="title">Заголовок новости</label>
-                        <input type="text" id="title" placeholder="Краткий и понятный заголовок" required>
+                        <input 
+                        type="text" 
+                        id="title" 
+                        name="title"
+                        placeholder="Краткий и понятный заголовок" 
+                        required>
                     </div>
 
                     <div class="form-group">
                         <label for="short_description">Краткое описание / анонс</label>
-                        <input type="text" id="short_description" placeholder="Небольшой текст для списка новостей" required>
+                        <input 
+                        type="text" 
+                        id="short_description" 
+                        name="short_description"
+                        placeholder="Небольшой текст для списка новостей" 
+                        required>
                     </div>
                     
                     <div class="form-group">
                         <label for="full_text">Полный текст</label>
-                        <textarea id="full_text" required></textarea>
+                        <textarea 
+                        id="full_text" 
+                        name="full_text"
+                        required></textarea>
                     </div>
                     
-                    <div class="content-grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 0;">
+                    <div class="content-grid grid-col-2 gap-30 m-b-0">
                         <div class="form-group">
                             <label for="category">Категория</label>
-                            <select id="category" required>
+                            <select 
+                            id="category" 
+                            name="category"
+                            required>
                                 <option value="" disabled selected>Выберите категорию...</option>
                                 <option value="events">События</option>
                                 <option value="updates">Обновления проекта</option>
@@ -64,7 +81,10 @@
 
                         <div class="form-group">
                             <label for="status">Статус</label>
-                            <select id="status" required>
+                            <select 
+                            id="status"
+                            name="status"
+                            required>
                                 <option value="draft">Черновик</option>
                                 <option value="published">Опубликовано</option>
                             </select>
@@ -73,7 +93,11 @@
                     
                     <div class="form-group">
                         <label for="image">Изображение (обложка)</label>
-                        <input type="file" id="image" accept="image/*">
+                        <input 
+                        type="file" 
+                        id="image" 
+                        name="image"
+                        accept="image/*">
                     </div>
                     
                     <button type="submit" class="btn-primary">Сохранить и Опубликовать</button>

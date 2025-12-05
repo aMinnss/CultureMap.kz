@@ -10,22 +10,27 @@
 </head>
 <body>
 
-    <div class="wrapper" style="max-width: 360px;">
+    <div class="wrapper max-w-360"> 
         
         <h1 class="site-logo">Подтвердите Email</h1>
         
-        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px; font-size: 0.95rem;">
+        <p class="text-center text-secondary m-b-30 font-s-sm">
             Мы отправили 6-значный код подтверждения на ваш Email.
         </p>
 
-        <form action="login.html" method="GET">
-            
+        <form action="#" method="POST">
+            <!-- Backend  заменит action на реальный маршрут -->
+
             <div class="form-group">
                 <label for="code">Код подтверждения</label>
-                <input type="text" id="code" required 
-                       placeholder="XXXXXX" 
-                       maxlength="6" 
-                       style="text-align: center; font-size: 1.5rem; letter-spacing: 15px;">
+                <input 
+                type="text" 
+                id="code"
+                placeholder="XXXXXX" 
+                maxlength="6"
+                name="code"
+                class="input-code-style" 
+                required> 
             </div>
 
             <button type="submit" class="auth-btn">Подтвердить</button>

@@ -12,7 +12,6 @@ body {
     padding: 0 20px;
 }
 
-/* --- Шапка --- */
 header {
     border-bottom: 1px solid var(--border-color);
     padding: 20px 0;
@@ -23,7 +22,6 @@ header {
     z-index: 1000;
 }
 
-/* --- Стили для публичной навигации на главной странице --- */
 .public-nav a {
     text-decoration: none;
     color: var(--text-primary);
@@ -43,7 +41,6 @@ header {
     gap: 30px;
 }
 
-/* --- Секции контента --- */
 section {
     padding: 60px 0;
     border-bottom: 1px solid var(--border-color);
@@ -59,27 +56,22 @@ h2 {
     font-weight: 500;
 }
 
-/* --- Дополнительные стили для секции "Новости" (info-section) --- */
-
 .info-section {
-    /* Дополнительный класс, если секции используются как инфо-блоки */
     margin-bottom: 60px;
 }
 
-/* Изменяем стиль заголовка H2, чтобы он лучше выделялся */
 #news h2, 
 #surveys h2, 
 #about h2, 
 #contacts h2 {
     font-size: 2rem;
-    font-weight: 300; /* Немного тоньше, чтобы соответствовать минимализму */
+    font-weight: 300;
     margin-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 15px;
 }
 
 .news-description {
-    /* Фон и рамка для блока с описанием и перечнем */
     background-color: var(--bg-light); 
     border: 1px solid var(--border-color);
     padding: 30px;
@@ -91,11 +83,10 @@ h2 {
     margin-top: 0;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--accent-color); /* Черный акцент */
+    color: var(--accent-color);
     margin-bottom: 20px;
 }
 
-/* --- Стили для маркированного списка в описании --- */
 .styled-list {
     list-style: none;
     padding-left: 0;
@@ -108,9 +99,8 @@ h2 {
     font-size: 0.95rem;
 }
 
-/* Кастомный маркер */
 .styled-list li:before {
-    content: "—"; /* Используем тире вместо точки для минимализма */
+    content: "—";
     color: var(--accent-color);
     font-weight: bold;
     display: inline-block;
@@ -120,10 +110,9 @@ h2 {
     left: 0;
 }
 
-/* --- Стили для новостных карточек в ленте --- */
 
 .news-item {
-    padding: 25px; /* Увеличиваем внутренний отступ для "воздуха" */
+    padding: 25px;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     border: 1px solid var(--border-color);
     border-radius: 6px;
@@ -136,7 +125,6 @@ h2 {
 
 .news-category {
     display: inline-block;
-    /* Устанавливаем мягкие цвета на основе вашей палитры */
     background-color: #f0f0f0; 
     color: var(--text-primary);
     padding: 5px 10px;
@@ -146,7 +134,6 @@ h2 {
     text-transform: uppercase;
 }
 
-/* --- Сетка карточек --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -180,37 +167,26 @@ h2 {
     width: fit-content;
 }
 
-/* Особый стиль для карточек событий (черная полоска слева) */
 .event-card {
     border-left: 3px solid #000;
     padding-left: 20px;
 }
 
-/* --- Стили для иконок социальных сетей в секции Контакты --- */
 
-/* Контейнер для номера WhatsApp и иконки */
 .social-contact-item {
     display: flex;
     align-items: center;
     font-size: 1.1rem;
 }
 
-/* Стиль для всех иконок IMG */
 .social-icon {
-    /* Фиксированный размер для гармоничности */
     width: 24px; 
     height: 24px;
-    
-    /* Отступы для иконки WhatsApp */
     margin-right: 10px; 
-    
-    /* Убедимся, что иконки выглядят четко */
     vertical-align: middle; 
 }
 
-/* Стиль для одиночных ссылок-иконок (Instagram, YouTube) */
 .social-icon-link {
-    /* Немного сдвигаем их, чтобы они визуально совпадали с текстом */
     line-height: 1; 
     padding: 0;
     margin: 0;
@@ -218,13 +194,11 @@ h2 {
 }
 
 .social-icon-link .social-icon {
-    /* Увеличиваем размер одиночных иконок, чтобы они были заметны */
     width: 30px; 
     height: 30px;
     margin-right: 0;
 }
 
-/* --- Подвал --- */
 footer {
     padding: 40px 0;
     text-align: center;
