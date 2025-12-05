@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureMap.kz | Подтверждение</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/register-confirm.css">
+</head>
+<body>
+
+    <div class="wrapper" style="max-width: 360px;">
+        
+        <h1 class="site-logo">Подтвердите Email</h1>
+        
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px; font-size: 0.95rem;">
+            Мы отправили 6-значный код подтверждения на ваш Email.
+        </p>
+
+        <form action="login.html" method="GET">
+            
+            <div class="form-group">
+                <label for="code">Код подтверждения</label>
+                <input type="text" id="code" required 
+                       placeholder="XXXXXX" 
+                       maxlength="6" 
+                       style="text-align: center; font-size: 1.5rem; letter-spacing: 15px;">
+            </div>
+
+            <button type="submit" class="auth-btn">Подтвердить</button>
+        </form>
+
+        <div class="register-prompt link-text">
+            Не получили код? 
+            <a href="#">Отправить повторно</a>
+        </div>
+    </div>
+
+</body>
+</html>

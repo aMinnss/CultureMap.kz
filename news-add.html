@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAdmin | Добавить новость</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <a href="#" class="logo">CultureMap.kz</a>
+                <nav class="sidebar-nav">
+                    <li><a href="dashboard-superadmin.html#main-panel">🏛 Главная (Управление)</a></li>
+                    <li class="active"><a href="dashboard-superadmin.html#news-panel">📰 Новости</a></li>
+                    <li><a href="dashboard-superadmin.html#analytics-panel">📈 Аналитика</a></li>
+                    <li><a href="dashboard-superadmin.html#surveys-panel">📋 Опросы</a></li>
+                </nav>
+            </div>
+            <div class="user-profile-card">
+                <h3>Глобальный Админ</h3>
+                <p>Контроль: Все города</p>
+                <span class="role-tag" style="background: #e62e2e; color: white;">SuperAdmin</span>
+                <a href="login.html" class="logout-btn">Выйти</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h1>Создание/Редактирование новости</h1>
+
+            <div class="full-panel" style="max-width: 900px; margin: 0 auto 30px auto;">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="form-group">
+                        <label for="title">Заголовок новости</label>
+                        <input type="text" id="title" placeholder="Краткий и понятный заголовок" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="short_description">Краткое описание / анонс</label>
+                        <input type="text" id="short_description" placeholder="Небольшой текст для списка новостей" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="full_text">Полный текст</label>
+                        <textarea id="full_text" required></textarea>
+                    </div>
+                    
+                    <div class="content-grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 0;">
+                        <div class="form-group">
+                            <label for="category">Категория</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>Выберите категорию...</option>
+                                <option value="events">События</option>
+                                <option value="updates">Обновления проекта</option>
+                                <option value="culture">Культура города</option>
+                                <option value="official">Официальная информация</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Статус</label>
+                            <select id="status" required>
+                                <option value="draft">Черновик</option>
+                                <option value="published">Опубликовано</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="image">Изображение (обложка)</label>
+                        <input type="file" id="image" accept="image/*">
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Сохранить и Опубликовать</button>
+                    <a href="dashboard-superadmin.html#news-panel" class="btn" >Отмена</a>
+                </form>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

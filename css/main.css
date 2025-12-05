@@ -1,0 +1,11 @@
+@import url('button.css');
+@import url('user.css');
+@import url('details.css');
+:root {
+  --bg-color: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --accent-color: #000000;
+  --border-color: #e5e5e5;
+  --bg-light: #f9f9f9;
+}

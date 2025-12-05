@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureMap | Регистрация</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/register-confirm.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <a href="login.html" class="back-link">← Войти</a>
+        
+        <h1 class="site-logo">Регистрация</h1>
+        
+        <form action="confirm.html" method="GET" class="login-form">
+            
+            <div class="form-group">
+                <label for="city">Город</label>
+                <select id="city" required>
+                    <option value="" disabled selected>Выберите город...</option>
+                    <option value="konayev">Конаев</option>
+                    <option value="almaty">Алматы</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Роль в системе</label>
+                <select id="role" required>
+                    <option value="" disabled selected>Выберите вашу роль...</option>
+                    <option value="organizer">Организатор (Районный сотрудник/Учреждение)</option>
+                    <option value="akimat">Акимат (Админ города)</option>
+                    <option value="superadmin">Админ сайта (SuperAdmin)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">ФИО</label>
+                <input type="text" id="name" required placeholder="Тлеужанова Инна Рахымовна">
+            </div>
+
+            <div class="form-group">
+                <label for="organization">Организация / Учреждение</label>
+                <input type="text" id="organization" required placeholder="Название организации">
+            </div>
+            
+            <div class="form-group">
+                <label for="district">Район (обязательно для Организатора)</label>
+                <input type="text" id="district" placeholder="Например, Бостандыкский">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" required placeholder="+7 (700) 000-00-00">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required placeholder="email@culturemap.kz">
+            </div>
+
+            <div class="form-group">
+                <label for="login">Логин</label>
+                <input type="text" id="login" required placeholder="Уникальный логин">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" required placeholder="Не менее 6 символов">
+            </div>
+
+            <button type="submit" class="auth-btn">Зарегистрироваться</button>
+        </form>
+
+        <div class="register-prompt">
+            Уже есть аккаунт? 
+            <a href="login.html" class="register-link">Войти</a>
+        </div>
+    </div>
+
+</body>
+</html>

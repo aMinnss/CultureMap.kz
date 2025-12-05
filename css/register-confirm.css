@@ -1,0 +1,107 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 40px;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+/* --- Оболочка формы --- */
+.wrapper {
+    background: var(--bg-color);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px; /* Увеличенная ширина для формы регистрации */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- Логотип / Заголовок --- */
+.site-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+/* --- Ссылки --- */
+.back-link, .link-text a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.link-text a {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.back-link:hover, .link-text a:hover {
+    text-decoration: underline;
+}
+
+/* --- Поля формы --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Стили для input и select */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+    transition: border-color 0.2s;
+    background-color: var(--bg-color); /* Для единообразия фона */
+    -webkit-appearance: none; /* Убирает стандартный стиль select в WebKit */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* --- Кнопка --- */
+.auth-btn {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+.auth-btn:hover {
+    background-color: #333333;
+}
+
+.register-prompt {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
