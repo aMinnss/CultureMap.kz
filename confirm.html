@@ -18,19 +18,21 @@
             Мы отправили 6-значный код подтверждения на ваш Email.
         </p>
 
-        <form action="#" method="POST">
+        <form action="#" method="POST" autocomplete="one-time-code">
             <!-- Backend  заменит action на реальный маршрут -->
 
             <div class="form-group">
                 <label for="code">Код подтверждения</label>
                 <input 
-                type="text" 
-                id="code"
-                placeholder="XXXXXX" 
-                maxlength="6"
-                name="code"
-                class="input-code-style" 
-                required> 
+                    type="text" 
+                    id="code"
+                    name="code"
+                    placeholder="XXXXXX" 
+                    maxlength="6"
+                    inputmode="numeric"
+                    pattern="[0-9]{6}"
+                    class="input-code-style" 
+                    required> 
             </div>
 
             <button type="submit" class="auth-btn">Подтвердить</button>

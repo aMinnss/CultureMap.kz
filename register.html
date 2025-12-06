@@ -20,7 +20,7 @@
             
             <div class="form-group">
                 <label for="city">Город</label>
-                <select id="city" required>
+                <select id="city" name="city" required>
                     <option value="" disabled selected>Выберите город...</option>
                     <option value="konayev">Конаев</option>
                     <option value="almaty">Алматы</option>
@@ -29,7 +29,7 @@
 
             <div class="form-group">
                 <label for="role">Роль в системе</label>
-                <select id="role" required>
+                <select id="role" name="role" required>
                     <option value="" disabled selected>Выберите вашу роль...</option>
                     <option value="organizer">Организатор (Районный сотрудник/Учреждение)</option>
                     <option value="akimat">Акимат (Админ города)</option>
@@ -40,70 +40,77 @@
             <div class="form-group">
                 <label for="name">ФИО</label>
                 <input 
-                type="text" 
-                id="name" 
-                name="name"
-                placeholder="Тлеужанова Инна Рахымовна"
-                required>
+                    type="text"
+                    autocomplete="name"
+                    id="name" 
+                    name="name"
+                    placeholder="Тлеужанова Инна Рахымовна"
+                    required>
             </div>
 
             <div class="form-group">
                 <label for="organization">Организация / Учреждение</label>
                 <input 
-                type="text" 
-                id="organization"  
-                name="organization"
-                placeholder="Название организации"
-                required>
+                    type="text"
+                    autocomplete="organization-title"
+                    id="organization"  
+                    name="organization"
+                    placeholder="Название организации"
+                    required>
             </div>
             
             <div class="form-group">
                 <label for="district">Район (обязательно для Организатора)</label>
                 <input 
-                type="text" 
-                id="district" 
-                name="district"
-                placeholder="Например, Бостандыкский">
+                    type="text" 
+                    autocomplete="address-level2"
+                    id="district" 
+                    name="district"
+                    placeholder="Например, Бостандыкский">
             </div>
 
             <div class="form-group">
                 <label for="phone">Телефон</label>
                 <input 
-                type="tel" 
-                id="phone" 
-                name="name"
-                placeholder="+7 (700) 000-00-00"
-                required >
+                    type="tel" 
+                    autocomplete="tel"
+                    id="phone" 
+                    name="phone"
+                    placeholder="+7 (700) 000-00-00"
+                    required >
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
                 <input 
-                type="email" 
-                id="email" 
-                name="email"
-                placeholder="email@culturemap.kz"
-                required >
+                    type="email" 
+                    autocomplete="email"
+                    id="email" 
+                    name="email"
+                    placeholder="email@culturemap.kz"
+                    required >
             </div>
 
             <div class="form-group">
                 <label for="login">Логин</label>
                 <input 
-                type="text" 
-                id="login" 
-                name="login"
-                placeholder="Уникальный логин"
-                required >
+                    type="text" 
+                    autocomplete="username"
+                    id="login" 
+                    name="login"
+                    placeholder="Уникальный логин"
+                    required >
             </div>
 
             <div class="form-group">
                 <label for="password">Пароль</label>
                 <input 
-                type="password" 
-                id="password" 
-                name="password"
-                placeholder="Не менее 6 символов"
-                required >
+                    type="password"
+                    autocomplete="new-password" 
+                    id="password" 
+                    name="password"
+                    placeholder="Не менее 6 символов"
+                    required >
             </div>
 
             <button type="submit" class="auth-btn">Зарегистрироваться</button>
