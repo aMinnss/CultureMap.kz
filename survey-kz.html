@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureMap | Опрос жителей</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/survey.css">
+</head>
+<body>
+
+    <header class="survey-header">
+        <div class="header-container">
+            <a href="#" class="logo">CultureMap</a>
+            <a href="survey-select.html" class="back-link">← Назад</a>
+        </div>
+    </header>
+
+    <main class="survey-wrapper">
+        <form action="#" method="POST" >
+        <!-- Backend  заменит action на реальный маршрут -->
+         
+            <div class="intro-block text-center">
+                <h1>ТҰРҒЫНДАРҒА АРНАЛҒАН САУАЛНАМА</h1>
+                <h2 class="text-secondary">«Ауданның мәдени сұраныстары мен қызығушылықтары»</h2>
+                <p class="badge">Анонимді</p>
+            </div>
+
+            <div class="survey-card">
+                <h3>1. Сіз туралы</h3>
+
+                <div class="question-item">
+                    <label class="q-title">1) Сіз қай ауданда тұрасыз?</label>
+                    <div class="options-grid">
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="alatau"><span>Алатау</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="bostandyk"><span>Бостандық</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="zhetysu"><span>Жетісу</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="medeu"><span>Медеу</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="nauryzbai"><span>Наурызбай</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="turksib"><span>Түрксіб</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="almaly"><span>Алмалы</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="auezov"><span>Әуезов</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_kz" value="other"><span>Басқа аудан</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">2) Қай қалада тұрасыз?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="city_kz" value="almaty"><span>Алматы</span></label>
+                        <label class="radio-custom"><input type="radio" name="city_kz" value="konaev"><span>Қонаев</span></label>
+                        <label class="radio-custom with-input">
+                            <input type="radio" name="city_kz" value="other">
+                            <span>Басқа:</span>
+                            <input type="text" name="city_other_kz" class="inline-input">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">3) Жасыңыз:</label>
+                    <div class="options-grid">
+                        <label class="radio-custom"><input type="radio" name="age_kz" value="under_18"><span>18-ге дейін</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_kz" value="18_24"><span>18–24</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_kz" value="25_34"><span>25–34</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_kz" value="35_44"><span>35–44</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_kz" value="45_54"><span>45–54</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_kz" value="55_plus"><span>55+</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-card">
+                <h3>2. Мәдени дағдыларыңыз бен әдеттеріңіз</h3>
+                
+                <div class="question-item">
+                    <label class="q-title">4) Мәдени орындарға қаншалықты жиі барасыз?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="freq_kz" value="weekly"><span>Аптасына/айына бірнеше рет</span></label>
+                        <label class="radio-custom"><input type="radio" name="freq_kz" value="monthly"><span>Бірнеше айда бір рет</span></label>
+                        <label class="radio-custom"><input type="radio" name="freq_kz" value="rarely"><span>Өте сирек</span></label>
+                        <label class="radio-custom"><input type="radio" name="freq_kz" value="very_rarely"><span>Дерлік бармаймын</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">5) Сізге шын мәнінде ұнайтын орындар:</label>
+                    <div class="options-list">
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="theater"><span>Театрлар</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="concert"><span>Концерттер</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="exhibitions"><span>Көрмелер</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="workshops"><span>Мастер-класстар</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="kids"><span>Балалар мен отбасы іс-шаралары</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="parks"><span>Парктер, арт-аймақтар</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="youth"><span>Жастарға арналған кеңістіктер</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_kz[]" value="none"><span>Әлі өзіме ұнайтын орынды таппадым</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">6) Неліктен осы орындарды таңдайсыз?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="reason_kz" value="program"><span>Бағдарламасы қызықты</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_kz" value="atmosphere"><span>Заманауи әрі жайлы кеңістік</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_kz" value="location"><span>Үйге жақын</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_kz" value="price"><span>Тегін немесе қолжетімді</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_kz" value="growth"><span>Өзіңді дамыту / шабыт алу үшін</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_kz" value="kids"><span>Балалармен уақыт өткізу үшін</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_kz" value="rest"><span>Жай демалу үшін</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-card">
+                <h3>3. Ауданыңыз туралы</h3>
+
+                <div class="question-item">
+                    <label class="q-title">7) Сіздің ойыңызша, ауданда қандай мәдени нысандар болуы керек?</label>
+                    <div class="options-list">
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="culture_house"><span>Мәдениет үйі</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="youth_center"><span>Жастар орталығы</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="kids_space"><span>Балалар шығармашылық орталығы</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="gallery"><span>Галерея / арт-кеңістік</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="concert_spot"><span>Концерт/фестиваль алаңы</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="open_air"><span>Ашық театр сахнасы (амфитеатр)</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="multifunc"><span>Мультимәдени орталық</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_kz[]" value="ok"><span>Барлығы жеткілікті</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">8) Егер ауданыңызға бір жаңа мәдени кеңістік ашу мүмкіндігі берілсе — сіз нені таңдар едіңіз?</label>
+                    <input type="text" name="one_wish_kz" class="text-input" placeholder="Сіздің жауабыңыз...">
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">9) Ауданыңыздағы мәдени өмірді қалай бағалайсыз?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="rate_kz" value="good"><span>Өте жақсы дамыған</span></label>
+                        <label class="radio-custom"><input type="radio" name="rate_kz" value="medium"><span>Жақсы, бірақ жақсартуға болады</span></label>
+                        <label class="radio-custom"><input type="radio" name="rate_kz" value="weak"><span>Орташа деңгейде</span></label>
+                        <label class="radio-custom"><input type="radio" name="rate_kz" value="bad"><span>Әлсіз дамыған</span></label>
+                        <label class="radio-custom"><input type="radio" name="rate_kz" value="none"><span>Дерлік жоқ</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-card">
+                <h3>4. Қызығушылықтарыңыз және қалауыңыз</h3>
+                <div class="question-item">
+                    <label class="q-title">10) Қандай іс-шара форматын жиі көргіңіз келеді?</label>
+                    <div class="options-list">
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="concerts"><span>Қазіргі заман концерттері</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="theater"><span>Театр қойылымдары</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="art"><span>Көрмелер, арт-форматтар</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="edu"><span>Білім беру мастер-класстары</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="national"><span>Ұлттық мәдениет, дәстүр</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="kids"><span>Балалар іс-шаралары</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="youth"><span>Жастар белсенділігі</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_kz[]" value="creative"><span>Ерекше, креативті форматтар</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">11) Сізге іс-шараларға баруға ең қолайлы уақыт:</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="time_kz" value="weekday_evening"><span>Аптаның жұмыс күндері (кеш)</span></label>
+                        <label class="radio-custom"><input type="radio" name="time_kz" value="weekend_day"><span>Демалыс күндері (күндіз)</span></label>
+                        <label class="radio-custom"><input type="radio" name="time_kz" value="weekend_evening"><span>Демалыс күндері (кеш)</span></label>
+                        <label class="radio-custom"><input type="radio" name="time_kz" value="any"><span>Кез келген уақытта</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">12) Ақпаратты қайдан аласыз?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="source_kz" value="insta"><span>Instagram</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_kz" value="wa"><span>WhatsApp</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_kz" value="friends"><span>Достар/жақындар</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_kz" value="poster"><span>Афишалар/постерлер</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_kz" value="none"><span>Қадағаламаймын</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-card">
+                <h3>5. Ауданға қажетті ұсыныстар</h3>
+                <div class="question-item">
+                    <label class="q-title">13) Ауданда мәдениеттің дамуын не тежеп отыр?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="problem_kz" value="places"><span>Нысандардың жетіспеуі</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_kz" value="events"><span>Іс-шаралардың аз болуы</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_kz" value="info"><span>Ақпараттың жеткіліксіздігі</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_kz" value="infra"><span>Инфрақұрылымның әлсіздігі</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_kz" value="formats_kz"><span>Қызықты форматтардың болмауы</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_kz" value="other"><span>Басқа</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">14) Сіздің ойыңыздағы «идеалды мәдени кеңістік» қандай болуы керек?</label>
+                    <input type="text" name="ideal_kz" class="text-input" placeholder="Қысқа жауап...">
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">15) Мәдени өмірді жақсарту үшін бір ұсыныс:</label>
+                    <textarea name="advice_kz" class="text-area" rows="4" placeholder="Ұсынысыңыз..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-footer text-center">
+                <button type="submit" class="submit-btn">Жіберу</button>
+            </div> 
+        </form>
+    </main>
+</body>
+</html>

@@ -28,23 +28,6 @@ body {
     color: var(--text-primary);
 }
 
-.back-link, .link-text a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.link-text a {
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-.back-link:hover, .link-text a:hover {
-    text-decoration: underline;
-}
-
 .form-group {
     margin-bottom: 15px;
 }

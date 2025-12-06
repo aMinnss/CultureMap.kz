@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureMap | Опрос жителей</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/survey.css">
+</head>
+<body>
+
+    <header class="survey-header">
+        <div class="header-container">
+            <a href="#" class="logo">CultureMap</a>
+            <a href="survey-select.html" class="back-link">← Назад</a>
+        </div>
+    </header>
+
+    <main class="survey-wrapper">
+        <form action="#" method="POST" >
+        <!-- Backend  заменит action на реальный маршрут -->
+         
+            <div class="intro-block text-center">
+                <h1>ОПРОС ДЛЯ ЖИТЕЛЕЙ</h1>
+                <h2 class="text-secondary">«Культура глазами жителей района»</h2>
+                <p class="badge">Анонимно</p>
+            </div>
+
+            <div class="survey-card">
+                <h3>1. О вас</h3>
+                
+                <div class="question-item">
+                    <label class="q-title">1) В каком районе вы живёте?</label>
+                    <div class="options-grid">
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="alatau"><span>Алатау</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="bostandyk"><span>Бостандык</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="zhetysu"><span>Жетысу</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="medeu"><span>Медеу</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="nauryzbai"><span>Наурызбай</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="turksib"><span>Турксиб</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="almaly"><span>Алмалинский</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="auezov"><span>Ауэзовский</span></label>
+                        <label class="radio-custom"><input type="radio" name="district_ru" value="other"><span>Другой</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">2) Ваш город:</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="city_ru" value="almaty"><span>Алматы</span></label>
+                        <label class="radio-custom"><input type="radio" name="city_ru" value="konaev"><span>Конаев</span></label>
+                        <label class="radio-custom with-input">
+                            <input type="radio" name="city_ru" value="other">
+                            <span>Другой:</span>
+                            <input type="text" name="city_other_ru" class="inline-input">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">3) Ваш возраст:</label>
+                    <div class="options-grid">
+                        <label class="radio-custom"><input type="radio" name="age_ru" value="under_18"><span>до 18</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_ru" value="18_24"><span>18–24</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_ru" value="25_34"><span>25–34</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_ru" value="35_44"><span>35–44</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_ru" value="45_54"><span>45–54</span></label>
+                        <label class="radio-custom"><input type="radio" name="age_ru" value="55_plus"><span>55+</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-card">
+                <h3>2. Ваши привычки и настроение</h3>
+                
+                <div class="question-item">
+                    <label class="q-title">4) Насколько часто культура появляется в вашей жизни?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="freq_ru" value="weekly"><span>Почти каждую неделю</span></label>
+                        <label class="radio-custom"><input type="radio" name="freq_ru" value="monthly"><span>Несколько раз в месяц</span></label>
+                        <label class="radio-custom"><input type="radio" name="freq_ru" value="rarely"><span>Редко, но появляюсь</span></label>
+                        <label class="radio-custom"><input type="radio" name="freq_ru" value="very_rarely"><span>Очень редко</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">5) Что вам искренне нравится посещать? <br><span class="note">(можно выбрать несколько)</span></label>
+                    <div class="options-list">
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="theater"><span>Театры и спектакли</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="concerts"><span>Концерты</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="exhibitions"><span>Выставки</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="workshops"><span>Мастер-классы</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="kids"><span>Детские и семейные события</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="parks"><span>Парки с культурными активностями</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="youth"><span>Молодёжные пространства</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="likes_ru[]" value="none"><span>Пока не нашёл(а) “своё” место</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">6) Почему вы выбираете именно эти места?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="reason_ru" value="program"><span>Интересная программа</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_ru" value="atmosphere"><span>Атмосфера и современный стиль</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_ru" value="location"><span>Удобная локация</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_ru" value="price"><span>Бесплатно или недорого</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_ru" value="growth"><span>Для развития или вдохновения</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_ru" value="kids"><span>Для детей</span></label>
+                        <label class="radio-custom"><input type="radio" name="reason_ru" value="rest"><span>Для отдыха</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-card">
+                <h3>3. Про ваш район</h3>
+                
+                <div class="question-item">
+                    <label class="q-title">7) Что в вашем районе точно должно появиться?</label>
+                    <div class="options-list">
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="culture_house"><span>Дом культуры</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="youth_center"><span>Центр для молодёжи</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="kids_space"><span>Пространство для детей</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="gallery"><span>Галерея / арт-зона</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="concert_spot"><span>Площадка для концертов/фестивалей</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="open_air"><span>Открытые культурные зоны</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="multifunc"><span>Многофункциональный центр</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="needs_ru[]" value="ok"><span>Всё устраивает</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">8) Представьте, что вам дали выбрать один объект для района. Что бы вы выбрали?</label>
+                    <input type="text" name="one_wish" class="text-input" placeholder="Ваш ответ...">
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">9) Как вы оцениваете культурную жизнь своего района?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="rate_ru" value="good"><span>Живёт и развивается</span></label>
+                        <label class="radio-custom"><input type="radio" name="rate_ru" value="medium"><span>Неплохо, но можно лучше</span></label>
+                        <label class="radio-custom"><input type="radio" name="rate_ru" value="bad"><span>Скорее бедно</span></label>
+                        <label class="radio-custom"><input type="radio" name="rate_ru" value="none"><span>Почти отсутствует</span></label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="survey-card">
+                <h3>4. Ваши интересы и ожидания</h3>
+                <div class="question-item">
+                    <label class="q-title">10) Какие форматы мероприятий вы бы хотели видеть чаще?</label>
+                    <div class="options-list">
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="concerts"><span>Современные концерты</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="theater"><span>Театральные постановки</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="art"><span>Выставки и арт-форматы</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="edu"><span>Образовательные мастер-классы</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="national"><span>Национальная культура и традиции</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="kids"><span>Детские программы</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="youth"><span>Молодёжные активности</span></label>
+                        <label class="checkbox-custom"><input type="checkbox" name="formats_ru[]" value="creative"><span>Креативные, необычные форматы</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">11) Когда вам удобнее всего посещать мероприятия?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="time_ru" value="weekday_evening"><span>Будни вечером</span></label>
+                        <label class="radio-custom"><input type="radio" name="time_ru" value="weekend_day"><span>Выходные днём</span></label>
+                        <label class="radio-custom"><input type="radio" name="time_ru" value="weekend_evening"><span>Выходные вечером</span></label>
+                        <label class="radio-custom"><input type="radio" name="time_ru" value="any"><span>В любое удобное время</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">12) Где вы обычно узнаёте о событиях?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="source_ru" value="insta"><span>Instagram</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_ru" value="wa"><span>WhatsApp</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_ru" value="friends"><span>Друзья/знакомые</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_ru" value="posters"><span>Постеры/афиши</span></label>
+                        <label class="radio-custom"><input type="radio" name="source_ru" value="none"><span>Не слежу за событиями</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-card">
+                <h3>5. Для ИИ-рекомендаций</h3>
+                <div class="question-item">
+                    <label class="q-title">13) Что тормозит развитие культуры в вашем районе?</label>
+                    <div class="options-list">
+                        <label class="radio-custom"><input type="radio" name="problem_ru" value="places"><span>Нехватка мест</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_ru" value="events"><span>Нехватка разнообразных событий</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_ru" value="info"><span>Нехватка информации</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_ru" value="infra"><span>Плохая инфраструктура</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_ru" value="formats_ru"><span>Нет интересных форматов</span></label>
+                        <label class="radio-custom"><input type="radio" name="problem_ru" value="other"><span>Другое</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">14) Представьте идеальное культурное пространство. Что там должно быть обязательно?</label>
+                    <input type="text" name="ideal_ru" class="text-input" placeholder="Короткий ответ...">
+                </div>
+
+                <div class="question-item">
+                    <label class="q-title">15) Ваш совет или пожелание:</label>
+                    <textarea name="advice_ru" class="text-area" rows="4" placeholder="Что улучшить?"></textarea>
+                </div>
+            </div>
+
+            <div class="form-footer text-center">
+                <button type="submit" class="submit-btn">Отправить ответы</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
