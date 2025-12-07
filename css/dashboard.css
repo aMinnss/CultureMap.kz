@@ -90,22 +90,6 @@ body {
     margin-top: 10px;
 }
 
-.user-profile-card .logout-btn {
-    display: block;
-    margin-top: 15px;
-    padding: 8px 15px;
-    text-align: center;
-    text-decoration: none;
-    background: #e62e2e;
-    color: white;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    transition: background-color 0.2s;
-}
-.user-profile-card .logout-btn:hover {
-    background: #c92727;
-}
-
 
 .main-content {
     grid-column: 2 / 3;
@@ -257,24 +241,4 @@ body {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-card); 
     outline: none;
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: #e6e6e6;
-    color: var(--accent-color);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    margin-top: 10px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #e6e6e6;
-    color: var(--accent-color);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    margin-top: 10px;
 }

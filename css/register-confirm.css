@@ -59,23 +59,6 @@ input:focus, select:focus {
     border-color: var(--accent-color);
 }
 
-.auth-btn {
-    width: 100%;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.2s;
-}
-
-.auth-btn:hover {
-    background-color: #333333;
-}
-
 .register-prompt {
     margin-top: 30px;
     text-align: center;

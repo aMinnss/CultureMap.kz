@@ -98,23 +98,6 @@ body {
     gap: 8px;
 }
 
-.lang-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    padding: 4px 8px;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.lang-btn.active, .lang-btn:hover {
-    color: var(--accent-color);
-    background-color: #e6e6e6;
-}
-
 .divider {
     color: var(--border-color);
 }
@@ -273,22 +256,4 @@ body {
     border-color: var(--color-blue);
     background: #fff;
     outline: none;
-}
-
-.submit-btn {
-    background-color: var(--color-blue);
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s;
-    box-shadow: 0 4px 6px rgba(58, 117, 196, 0.2);
-}
-
-.submit-btn:hover {
-    background-color: #2e62a1;
-    transform: translateY(-1px);
 }

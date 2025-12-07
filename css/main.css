@@ -1,4 +1,5 @@
 @import url('details.css');
+@import url('button.css');
 
 :root {
     --bg-color: #ffffff;
