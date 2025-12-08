@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureMap | Редактирование опроса</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/survey.css">
+</head>
+<body>
+
+    <header class="survey-header">
+        <div class="header-container">
+            <a href="#" class="logo">CultureMap (Admin)</a>
+            <a href="dashboard-surveys.html" class="back-link">
+                <span class="text-secondary">← К списку опросов</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="survey-wrapper survey-editor-wrapper">
+        <form action="#" method="POST" id="survey-editor-form">
+            
+            <div class="intro-block text-center">
+                <h1>Редактирование опроса</h1>
+                <p class="text-secondary">Управление вопросами и структурой. Все изменения сохраняются после нажатия кнопки "Сохранить и опубликовать".</p>
+                
+                <input type="text" name="survey_title" class="title-input" value="ОПРОС ДЛЯ ЖИТЕЛЕЙ" placeholder="Заголовок опроса">
+                <input type="text" name="survey_subtitle" class="subtitle-input" value="«Культура глазами жителей района»" placeholder="Подзаголовок">
+            </div>
+
+            <div class="editor-body">
+                
+                <div class="survey-card editor-section-group" data-section-id="1">
+                    <div class="section-header">
+                        <input type="text" name="section_title_1" class="section-title-input" value="1. О вас" placeholder="Название секции">
+                        <div class="section-controls">
+                            <button type="button" class="btn-control btn-delete-section">Удалить секцию</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-question-item" data-question-id="1">
+                        <div class="question-header">
+                            <input type="text" name="q_text_1" class="q-edit-text" value="1) В каком районе вы живёте?" placeholder="Текст вопроса">
+                            <div class="q-type-select-wrapper">
+                                <select name="q_type_1" class="q-type-select">
+                                    <option value="radio">Один вариант (Radio)</option>
+                                    <option value="checkbox">Несколько (Checkbox)</option>
+                                    <option value="text">Текстовый ответ</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="options-editor-container">
+                            <div class="option-row" data-option-id="1.1">
+                                <span class="option-type-icon">●</span>
+                                <input type="text" name="option_1_1" class="option-text-input" value="Алатау" placeholder="Текст варианта ответа">
+                                <button type="button" class="btn-control btn-delete-option">×</button>
+                            </div>
+                            <div class="option-row" data-option-id="1.2">
+                                <span class="option-type-icon">●</span>
+                                <input type="text" name="option_1_2" class="option-text-input" value="Бостандык" placeholder="Текст варианта ответа">
+                                <button type="button" class="btn-control btn-delete-option">×</button>
+                            </div>
+
+                            <button type="button" class="btn-add-option">+ Добавить вариант</button>
+                        </div>
+                        
+                        <div class="q-footer">
+                            <button type="button" class="btn-control btn-duplicate">Дублировать</button>
+                            <button type="button" class="btn-control btn-delete-question">Удалить вопрос</button>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn-add-question btn-secondary">+ Добавить вопрос в секцию</button>
+                </div>
+                
+                <div class="text-center m-t-40">
+                    <button type="button" class="btn-add-section submit-btn">+ Добавить новую секцию</button>
+                </div>
+
+            </div>
+
+            <div class="form-footer text-center editor-footer m-t-40s">
+                <button type="submit" class="submit-btn publish-btn">Сохранить и опубликовать</button>
+                <button type="button" class="btn-secondary btn-draft">Сохранить как черновик</button>
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>
