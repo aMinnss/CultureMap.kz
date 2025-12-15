@@ -29,16 +29,6 @@
     background-color: #333333;
 }
 
-.btn-primary {
-    display: inline-block;
-    background-color: #e6e6e6;
-    color: var(--accent-color);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    margin-top: 10px;
-}
-
 .btn {
     display: inline-block;
     background-color: #e6e6e6;
@@ -55,47 +45,68 @@
     padding: 8px 15px;
     text-align: center;
     text-decoration: none;
-    background: #e62e2e;
+    background: var(--color-danger);
     color: white;
     border-radius: 4px;
     font-size: 0.85rem;
     transition: background-color 0.2s;
 }
 .logout-btn:hover {
-    background: #c92727;
+    background: var(--color-danger);
 }
 
-.lang-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    padding: 4px 8px;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.lang-btn.active, .lang-btn:hover {
-    color: var(--accent-color);
-    background-color: #e6e6e6;
-}
-
+.add-section-btn,
+.draft-btn,
+.cancel-btn,
+.lang-btn,
 .submit-btn {
     background-color: var(--color-blue);
     color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 15px 40px;
+    font-size: 16px;
+    padding: 15px 25px;
     border: none;
+    text-decoration: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s;
     box-shadow: 0 4px 6px rgba(58, 117, 196, 0.2);
 }
 
-.submit-btn:hover {
+.add-section-btn:hover,
+.draft-btn:hover,
+.cancel-btn:hover,
+.lang-btn:hover,
+.submit-btn:hover{
     background-color: #2e62a1;
-    transform: translateY(-1px);
+    transform: translateY(0);
+}
+
+.add-btn,
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-btn:hover .btn-text,
+.delete-btn:hover .btn-text {
+  opacity: 1;
+  max-width: 80px;
+}
+
+.btn-text {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, max-width 0.2s ease;
+}
+
+.symbol-btn {
+  font-size: 18px;
+  font-weight: 600;
 }

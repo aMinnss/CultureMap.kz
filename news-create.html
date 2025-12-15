@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/create-edit.css">
 </head>
 <body>
 
@@ -30,7 +31,7 @@
         </aside>
 
         <main class="main-content">
-            <h1>Создание/Редактирование новости</h1>
+            <h1>Создание новости</h1>
 
             <div class="full-panel max-w-900 m-auto m-b-30">
                 <form action="#" method="POST" enctype="multipart/form-data">
@@ -99,11 +100,12 @@
                         name="image"
                         accept="image/*">
                     </div>
-                    
-                    <button type="submit" class="btn-primary">Сохранить и Опубликовать</button>
-                    <a href="dashboard-superadmin.html#news-panel" class="btn" >Отмена</a>
                 </form>
             </div>
+                <div class="text-center gap-8px">
+                    <button type="submit" class="btn submit-btn">Добавить новость</button>
+                    <a href="dashboard-superadmin.html#news-panel" class="btn cancel-btn" >Отмена</a>
+                </div>
 
         </main>
     </div>

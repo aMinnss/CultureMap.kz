@@ -64,6 +64,8 @@
 .m-auto { margin-left: auto; margin-right: auto; }
 
 .p-25 { padding: 25px; }
+.p-t-20 {padding-top: 20px}
+.p-i-40 {padding-inline: 40px;}
 .m-t-5 { margin-top: 5px; }
 .m-t-30 { margin-top: 30px; }
 .m-t-40 { margin-top: 40px; }
@@ -84,6 +86,7 @@
 .flex-wrap { flex-wrap: wrap; }
 .align-center { align-items: center; }
 .gap-40 { gap: 40px; }
+.gap-8px { gap: 8px; }
 
 .grid-col-1 { grid-template-columns: 1fr; }
 .grid-col-2 { grid-template-columns: 1fr 1fr; }
@@ -157,4 +160,15 @@
 
 .card-border-blue {
     border: 1px solid var(--color-blue);
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    display: inline-block;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
