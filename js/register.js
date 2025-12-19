@@ -2,8 +2,14 @@
 const form = document.querySelector('.js-register-form');
 
 // 4. собрать данные из полей (HTML-элемент и его значение — это разные вещи)
-const emailInput = document.querySelector('#email'); // emailInput - это само поле
+const citylInput = document.querySelector('#city'); // emailInput - это само поле
+const districtInput = document.querySelector('#district');
+const emailInput = document.querySelector('#email');
+const fioInput = document.querySelector('#fio');
+const organizationlInput = document.querySelector('#organization');
 const passwordInput = document.querySelector('#password');
+const phoneInput = document.querySelector('#phone');
+const roledInput = document.querySelector('#role');
 
 if(!form) {
     console.error('Форма не найдена')
@@ -15,19 +21,36 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
     console.log('Форма отправлена')
 
-    const email = emailInput.value.trim(); // значение (строка)
+    const city = citylInput.value.trim();
+    const district = districtInput.value.trim();
+    const email = emailInput.value.trim();
+    const fio = fioInput.value.trim();
+    const organization = organizationlInput.value.trim();
     const password = passwordInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const role = roledInput.value.trim();
 
-    console.log(email, password) //ПОКА ТОЛЬКО email, password, ТАК КАК НЕТ СВАГГЕРА
+    console.log(city, district, email, fio, organization, password, phone, role)
 
-    if(!email || !password) {
-        alert('Пожалусйта, заполните все поля!')
+    if(!city || !email || !fio || !organization || !password || !phone || !role) {
+        alert('Пожалуйста, заполните все поля!')
         return;  // останавливаем дальнейшую обработку
     }
 
+    if (role === 'manager' && !district) {
+        alert('Для роли "Организатор" необходимо указать район');
+        return;
+    }
+
     const data = {
-        email: email, // (ключ) → как зовётся свойство в объекте \ (значение) → содержимое переменной, которую мы получили из input
-        password: password
+        city: city, // (ключ) → как зовётся свойство в объекте \ (значение) → содержимое переменной, которую мы получили из input
+        district: district,
+        email: email,
+        fio: fio,
+        organization: organization,
+        password: password,
+        phone: phone,
+        role: role,
     };
 
     console.log(data);
@@ -35,44 +58,43 @@ form.addEventListener('submit', async (event) => {
     try {
         console.log('Отправляем данные: ', data)
 
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // await new Promise(resolve => setTimeout(resolve, 1000));
         // ПОКА НЕТ РЕАЛЬНОГО API
 
-        // const response = await fetch('/register', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type' : 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // });
+        const response = await fetch('http://46.226.123.216:8080/v1/auth', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
 
-        // const result = await response.json();
+        const result = await response.json();
 
-        // console.log('Ответ сервера:', result);
+        console.log('Ответ сервера:', result);
 
-        // // здесь мы можем обработать результат
-        // if (Response.ok) {
-        //     throw new Error('Ошибка регистрации');
-        // }
+        // здесь мы можем обработать результат
+        if (response.ok) {
+            alert('Ваша регистрация прошла успешно! Пожалуйста, ожидайте подтверждения админа');
+            window.location.href = 'index.html'
+            return
+        } else {
+            throw new Error(result.error || 'Ошибка регистрации');
+        } 
 
-        // emailInput.value = '';
-        // passwordInput.value = '';
-
-        console.log('Регистрация прошла успешно!')
+        citylInput.value = '';
+        districtInput.value = '';
+        emailInput.value = '';
+        fioInput.value = '';
+        organizationlInput.value = '';
+        passwordInput.value = '';
+        phoneInput.value = '';
+        roledInput.value = '';
 
     } catch (error) {
         console.error('Ошибка при отправке ', error);
     }
 });
-
-
-
-async function name(params) {
-    
-}
-
-
-
 
 // 5. проверить обязательные поля
 
