@@ -1,0 +1,29 @@
+.user-card {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px; /* скругление углов */
+    background-color: #f9f9f9; /* светлый фон */
+}
+
+.user-header {
+    font-weight: bold;
+}
+
+.user-header:hover {
+    background-color: #eaeaea;
+}
+
+.user-details {
+    display: none;
+    margin-top: 5px;
+}
+
+.city,
+.organization,
+.district,
+.phone,
+.email {
+    margin: 10px;
+}

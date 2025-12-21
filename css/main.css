@@ -11,7 +11,7 @@
     --color-blue: #0077B6;
     --color-danger: #C1121F;
     
-    --color-info: #00796b;
+    --color-info: #52B788;
     --bg-info-light: #e0f7fa;
     --border-info: #b2ebf2;
 
@@ -171,4 +171,8 @@
 
 .back-link:hover {
     text-decoration: underline;
+}
+
+.sidebar-divider {
+    border-top: 1px solid #ccc;
 }

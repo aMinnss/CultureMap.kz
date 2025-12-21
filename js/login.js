@@ -32,6 +32,7 @@ form.addEventListener('submit', async (event) => {
             },
             body: JSON.stringify(data)
         });
+        
 
         const result = await response.json();
         console.log('Полный ответ сервера:', result);
@@ -39,7 +40,7 @@ form.addEventListener('submit', async (event) => {
         if(response.ok) {   
             sessionStorage.setItem('userId', result.id);
             sessionStorage.setItem('role', result.role);
-            // window.location.href = 'confirm.html';
+            window.location.href = 'confirm.html';
         } else {
             alert('Ошибка: ' + result.message);
         }

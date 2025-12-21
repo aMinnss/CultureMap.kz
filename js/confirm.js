@@ -1,67 +1,141 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const codeForm = document.querySelector('.one-time-code');
-const codeValue = document.querySelector('#code'); 
+    const codeValue = document.querySelector('#code');
+    // const resendBtn  = document.querySelector('.#resendCode');
 
-const userIdStr = sessionStorage.getItem('userId');
-const numericUserId = parseInt(userIdStr?.trim(),10);
-const role = sessionStorage.getItem('role');
+    const userIdStr = sessionStorage.getItem('userId');
+    const role = sessionStorage.getItem('role');
 
-if (isNaN(numericUserId)) {
-    console.error('userId из sessionStorage не является числом!', userIdStr);
-    alert('Ошибка: некорректный userId');
-    return;
-}
-
-codeForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    console.log('Форма отправлена!');
-
-    const code = codeValue.value;
-
-    console.log(code)
-
-    if(!code) {
-        alert('Пожалуйста, введите код.')
+    if (!userIdStr || !role) {
+        alert('Сессия истекла. Войдите снова.');
+        window.location.href = 'login.html';
         return;
     }
 
-    const data = {
-        code: code,
-        id: numericUserId
+    const userId  = parseInt(userIdStr?.trim(),10);
+    if (isNaN(userId )) {
+        alert('Некорректный пользователь');
+        window.location.href = 'login.html';
+        return;
     }
 
-    console.log(data)
+    codeForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        console.log('Форма отправлена!');
 
-    try {
-        console.log('Отправляем данные: ', data)
+        const code = codeValue.value;
 
-        const response = await fetch('http://46.226.123.216:8080/v1/auth', {
-            method: 'PATCH',
-            headers: {
-                'Content-Type' : 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        console.log('Статус:', response.status);
+        console.log(code)
 
-        const result = await response.json();
-
-        console.log('Ответ сервера:', result);
-
-        if(response.ok) {
-            if (role === 'manager') {
-                window.location.href = 'dashboard-organizer.html'
-            } else if (role === 'akimat') {
-                window.location.href = 'dashboard-akimat.html'
-            } else if (role === 'admin') {
-                window.location.href = 'dashboard-superadmin.html'
-            } else {
-                alert(result.message)
-            } 
+        if(!code) {
+            alert('Пожалуйста, введите код.')
+            return;
         }
-    } catch (error) {
-        console.error('Ошибка при отправке ', error);
-    }
 
-})
+        const data = {
+            code: code,
+            id: userId 
+        }
+
+        console.log(data)
+
+        try {
+            console.log('Отправляем данные: ', data)
+
+            const response = await fetch('http://46.226.123.216:8080/v1/auth', {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type' : 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            console.log('Статус:', response.status);
+
+            const result = await response.json();   
+
+            console.log('Ответ сервера:', result);  
+
+            localStorage.setItem('token', result.access_token);
+            localStorage.setItem('refreshToken', result.refresh_token);
+            localStorage.setItem('role', result.role);
+
+            console.log('token', result.access_token);
+            console.log(localStorage.getItem('role'));
+
+            const role = result.role;
+
+            if(response.ok) {
+                if (role === 'manager') {
+                    window.location.href = 'dashboard-organizer.html'
+                } else if (role === 'akimat') {
+                    window.location.href = 'dashboard-akimat.html'
+                } else if (role === 'admin') {
+                    window.location.href = 'dashboard-superadmin.html'
+                } else {
+                    alert(result.message)
+                } 
+            }
+        } catch (error) {
+            console.error('Ошибка при отправке ', error);
+        }
+
+    });
+
+    // let seconds = 60;
+    // resendBtn.disabled = true;
+    // resendBtn.textContent = `Отправить повторно (${seconds})`;
+
+    // const timer = setInterval(() => {
+    //     seconds--;
+    //     resendBtn.textContent = `Отправить повторно (${seconds})`;
+
+    //     if (seconds <= 0) {
+    //         clearInterval(timer);
+    //         resendBtn.disabled = false;
+    //         resendBtn.textContent = 'Отправить повторно'
+    //     }
+    // }, 1000);
+
+    // resendBtn.addEventListener('click', async () => {
+    //     resendBtn.disabled = true;
+
+    //     try {
+    //         const response = await fetch ('http://46.226.123.216:8080/v1/auth/resend-code', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type' : 'application/json'
+    //             },
+    //             body: JSON.stringify({id: userId})
+    //         });
+
+    //         const result = await response.json();
+
+    //         if (!response.ok) {
+    //             alert(result.error || 'Ошибка отправки кода');
+    //             resendBtn.disabled = false;
+    //             result;
+    //         }
+
+    //         alert('Код отправлен повторно');
+
+    //         seconds = 60;
+    //         resendBtn.textContent = 'Отправить повторно (${seconds})';
+
+    //         const timer = setInterval(() => {
+    //             seconds--;
+    //             resendBtn.textContent = `Отправить повторно (${seconds})`;
+
+    //             if (seconds <= 0) {
+    //                 clearInterval(timer);
+    //                 resendBtn.disabled = false;
+    //                 resendBtn.textContent = 'Отправить повторно'
+    //             }
+    //         }, 1000);
+    //     } catch (error) {
+    //         console.error(error);
+    //         alert('Ошибка сети');
+    //         resendBtn.disabled = false;
+    //     }
+    // });
 })
