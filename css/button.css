@@ -130,3 +130,12 @@
 .deny-btn {
     background-color: var(--color-danger);
 }
+
+.resend-btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}

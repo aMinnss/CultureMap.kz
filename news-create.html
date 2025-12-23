@@ -38,7 +38,7 @@
             <h1>Создание новости</h1>
 
             <div class="full-panel max-w-900 m-auto m-b-30">
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="#" method="POST" class="news-create" enctype="multipart/form-data">
                     <!-- Backend  заменит action на реальный маршрут -->
                     
                     <div class="form-group">
@@ -52,20 +52,28 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="short_description">Краткое описание / анонс</label>
+                        <label for="summary">Краткое описание / анонс</label>
                         <input 
                         type="text" 
-                        id="short_description" 
-                        name="short_description"
+                        id="summary" 
+                        name="summary"
                         placeholder="Небольшой текст для списка новостей" 
                         required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="full_text">Полный текст</label>
+                        <label for="content">Полный текст</label>
                         <textarea 
-                        id="full_text" 
-                        name="full_text"
+                        id="content" 
+                        name="content"
+                        required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="author">Автор</label>
+                        <textarea 
+                        id="author" 
+                        name="author"
                         required></textarea>
                     </div>
                     
@@ -77,10 +85,10 @@
                             name="category"
                             required>
                                 <option value="" disabled selected>Выберите категорию...</option>
-                                <option value="events">События</option>
-                                <option value="updates">Обновления проекта</option>
-                                <option value="culture">Культура города</option>
-                                <option value="official">Официальная информация</option>
+                                <option value="События">События</option>
+                                <option value="Обновления проекта">Обновления проекта</option>
+                                <option value="Культура города">Культура города</option>
+                                <option value="Официальная информация">Официальная информация</option>
                             </select>
                         </div>
 
@@ -90,8 +98,8 @@
                             id="status"
                             name="status"
                             required>
-                                <option value="draft">Черновик</option>
-                                <option value="published">Опубликовано</option>
+                                <option value="Черновик">Черновик</option>
+                                <option value="Опубликовано">Опубликовано</option>
                             </select>
                         </div>
                     </div>
@@ -104,15 +112,16 @@
                         name="image"
                         accept="image/*">
                     </div>
+                    <div class="text-center gap-8px">
+                        <button type="submit" class="btn submit-btn">Добавить новость</button>
+                        <a href="dashboard-superadmin.html#news-panel" class="btn cancel-btn" >Отмена</a>
+                    </div>
                 </form>
             </div>
-                <div class="text-center gap-8px">
-                    <button type="submit" class="btn submit-btn">Добавить новость</button>
-                    <a href="dashboard-superadmin.html#news-panel" class="btn cancel-btn" >Отмена</a>
-                </div>
 
         </main>
     </div>
 
+    <script src="js/news-create.js"></script>
 </body>
 </html>

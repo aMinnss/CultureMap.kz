@@ -42,7 +42,6 @@ async function fetchConfirmedUsers() {
             if(user.role !== 'akimat' && user.role !== 'admin') {
                 organizationHTML = `<div>Организация: ${user.organization}</div>`
             }
-            // Бэк должен добавить !!!organization!!!
 
             const userDiv = document.createElement('div');
             userDiv.classList.add('user-card');

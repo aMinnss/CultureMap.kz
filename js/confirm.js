@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const codeForm = document.querySelector('.one-time-code');
     const codeValue = document.querySelector('#code');
-    // const resendBtn  = document.querySelector('.#resendCode');
+    const resendBtn  = document.querySelector('#resendCode');
 
     const userIdStr = sessionStorage.getItem('userId');
     const role = sessionStorage.getItem('role');
@@ -19,6 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
         return;
     }
+
+    let timer = null;
+    function startResendTimer() {
+        let seconds = 60;
+        resendBtn.disabled = true;
+        resendBtn.textContent = `Отправить повторно (${seconds})`;
+
+        clearInterval(timer);
+        
+        timer = setInterval(() => {
+            seconds--;
+            resendBtn.textContent = `Отправить повторно (${seconds})`;
+
+            if (seconds <= 0) {
+                clearInterval(timer);
+                resendBtn.disabled = false;
+                resendBtn.textContent = 'Отправить повторно'
+            }
+        }, 1000);
+    }
+
+    startResendTimer();
 
     codeForm.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -82,60 +104,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // let seconds = 60;
-    // resendBtn.disabled = true;
-    // resendBtn.textContent = `Отправить повторно (${seconds})`;
+    resendBtn.addEventListener('click', async () => {
 
-    // const timer = setInterval(() => {
-    //     seconds--;
-    //     resendBtn.textContent = `Отправить повторно (${seconds})`;
+        if (!userId) {
+            alert('Не найден ID пользователя');
+            return;
+        }
 
-    //     if (seconds <= 0) {
-    //         clearInterval(timer);
-    //         resendBtn.disabled = false;
-    //         resendBtn.textContent = 'Отправить повторно'
-    //     }
-    // }, 1000);
+        try {
+            const response = await fetch ('http://46.226.123.216:8080/v1/auth/resend-code', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({id: userId})
+            });
 
-    // resendBtn.addEventListener('click', async () => {
-    //     resendBtn.disabled = true;
+            const result = await response.json();
 
-    //     try {
-    //         const response = await fetch ('http://46.226.123.216:8080/v1/auth/resend-code', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type' : 'application/json'
-    //             },
-    //             body: JSON.stringify({id: userId})
-    //         });
+            if (!response.ok) {
+                alert(result.error || 'Ошибка отправки кода');
+                resendBtn.disabled = false;
+                result;
+            }
 
-    //         const result = await response.json();
+            alert(result.message || 'Код отправлен повторно');
+            
+            startResendTimer();
 
-    //         if (!response.ok) {
-    //             alert(result.error || 'Ошибка отправки кода');
-    //             resendBtn.disabled = false;
-    //             result;
-    //         }
-
-    //         alert('Код отправлен повторно');
-
-    //         seconds = 60;
-    //         resendBtn.textContent = 'Отправить повторно (${seconds})';
-
-    //         const timer = setInterval(() => {
-    //             seconds--;
-    //             resendBtn.textContent = `Отправить повторно (${seconds})`;
-
-    //             if (seconds <= 0) {
-    //                 clearInterval(timer);
-    //                 resendBtn.disabled = false;
-    //                 resendBtn.textContent = 'Отправить повторно'
-    //             }
-    //         }, 1000);
-    //     } catch (error) {
-    //         console.error(error);
-    //         alert('Ошибка сети');
-    //         resendBtn.disabled = false;
-    //     }
-    // });
+        } catch (error) {
+            console.error(error);
+            alert('Ошибка сети');
+        }
+    });
 })
