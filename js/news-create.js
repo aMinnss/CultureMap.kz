@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {          //JS ждёт, п
         const author = newsCreate.querySelector('#author').value.trim();
         const category = newsCreate.querySelector('#category').value;
         const status = newsCreate.querySelector('#status').value;
-        // const project_id = newsCreate.querySelector('#project_id').value; зачем она нужна то
+        // const project_id = newsCreate.querySelector('#project_id').value;
         const imageInput = newsCreate.querySelector('#image');
         const imageFile = imageInput.files[0];
 
-        if(!title || !summary || !content || !author || !category || !status) {
+        if(!title || !summary || !content || !category || !status) {
         alert('Пожалуйста, заполните все обязательные    поля!')
         return;  // останавливаем дальнейшую обработку
     }
@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {          //JS ждёт, п
 
             if(response.ok) {
                 alert('Новость успешно добавлена!')
+                window.location.href = 'news.html'
+                return;
             } else {
                 alert('Ошибка: ' + result.message || 'Что-то пошло не так')
             }

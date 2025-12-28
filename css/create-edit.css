@@ -86,3 +86,88 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+
+/* Контейнер новостей в админке */
+.admin-news-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Карточки админки */
+.admin-news-card {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    transition: transform 0.2s;
+}
+
+.admin-news-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Картинка */
+.admin-news-image {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* Текстовые элементы */
+.admin-news-category {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.admin-news-title {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.admin-news-summary {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.admin-news-status {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Кнопки действий */
+.admin-news-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Кнопки всегда внизу карточки */
+}
+
+.admin-news-actions button {
+    flex: 1;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.admin-news-actions .edit-btn {
+    background-color: var(--color-info);
+    color: white;
+}
+
+.admin-news-actions .delete-btn {
+    background-color: var(--color-danger);
+    color: white;
+}
+
+.admin-news-card-draft {
+    opacity: 0.6;        /* слегка прозрачная */
+    border: 2px dashed #999; /* пунктирная рамка */
+}

@@ -139,3 +139,21 @@
     cursor: pointer;
     font-size: 14px;
 }
+
+.edit-btn,
+.delete-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: var(--color-blue);
+}
+
+.delete-btn {
+    background-color: var(--color-danger);
+}

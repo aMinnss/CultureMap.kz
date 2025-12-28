@@ -113,6 +113,7 @@ body {
 
 .card {
     background: var(--bg-card);
+    margin: 10px 0;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid var(--border-color);

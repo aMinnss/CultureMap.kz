@@ -17,7 +17,7 @@
                 <nav class="sidebar-nav">
                     <ul>
                         <li class="active"><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
-                        <li><a href="dashboard-superadmin.html#news-panel">Новости</a></li>
+                        <li><a href="news.html">Новости</a></li>
                         <li><a href="dashboard-superadmin.html#analytics-panel">Аналитика</a></li>
                         <li><a href="dashboard-superadmin.html#surveys-panel">Опросы</a></li>
                         <li class="sidebar-divider"><a href="users-pending.html">Запросы</a></li>
@@ -27,10 +27,9 @@
             </div>
 
             <div class="user-profile-card" id="user-profile">
-                <h3 id="admin-username">Глобальный Админ</h3>
-                <p id="admin-organization">Организация: CultureMap HQ</p>
-                <p id="admin-control-region">Контроль: Все города</p>
-                <span id="admin-role" class="role-tag bg-danger-light text-white">SuperAdmin</span>
+                <h3 id="profile-username">Глобальный Админ</h3>
+                <p id="profile-organization">Организация: CultureMap HQ</p>
+                <span id="profile-role" class="role-tag bg-danger-light text-white">SuperAdmin</span>
                 <a href="index.html" class="logout-btn" id="logout-btn">Выйти</a>
             </div>
         </aside>
@@ -40,16 +39,21 @@
 
             <!-- PANEL 1 -->
             <section id="main-panel">
-                <h2>Управление городами и пользователями</h2>
+                <h2>Активность пользователей</h2> 
 
-                <!-- Подтверждение аккаунтов -->
+                <!-- Управление городами -->
                 <div class="full-panel">
-                    <h3 id="approval-title">Подтверждение / Блокировка аккаунтов</h3>
-                    <div class="placeholder h-150">
-                        <!-- JS: таблица заявок -->
-                        [Таблица: Новые заявки на регистрацию | Статус | Действие (Подтвердить/Блокировать)]
+                    <h3 id="city-management-title">Активность пользователей</h3>
+                    <div id="activities" class="placeholder h-100">
+                        <!-- JS: список городов -->
+                        [Активность пользователей]
                     </div>
                 </div>
+            </section>
+
+            <!-- PANEL 2 -->
+            <section id="main-panel">
+                <h2>Управление городами и пользователями</h2> 
 
                 <!-- Управление городами -->
                 <div class="full-panel">
@@ -57,62 +61,6 @@
                     <div class="placeholder h-100">
                         <!-- JS: список городов -->
                         [Таблица: Алматы (Активен) | Конаев (Активен) | Добавить новый город]
-                    </div>
-                </div>
-            </section>
-            
-            <!-- PANEL 2 — Новости -->
-            <section id="news-panel" class="m-t-40">
-                <h2 id="news-title">Управление новостями и контентом</h2>
-
-                <div class="content-grid">
-                    <div class="card grid-span-all">
-                        <a href="news-create.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
-                            Создать новость
-                        </a>
-                        <a href="news-edit.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
-                            Редактировать новость
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <h3 id="published-news-title">Актуальные новости</h3>
-                        <div class="placeholder h-100"  id="published-news-list">
-                            <!-- JS: список новостей -->
-                            [Список опубликованных новостей (Редактировать)]
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h3 id="draft-news-title">Черновики</h3>
-                        <div class="placeholder h-100" id="draft-news-list">
-                            [Список черновиков]
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PANEL 3 — Опросы -->
-            <section id="surveys-panel" class="m-t-40">
-                <h2 id="surveys-title">Управление статичными опросами</h2>
-                
-                    <div class="card grid-span-all">
-                        <a href="survey-create.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
-                            Создать опрос
-                        </a>
-                        <a href="survey-edit.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
-                            Редактировать опрос
-                        </a>
-                    </div>
-
-                <div class="full-panel">
-                    <h3 id="surveys-subtitle">Добавление/Редактирование опроса</h3>
-                    <p class="text-secondary"  id="surveys-description">
-                        Здесь управляются встроенные опросы сайта. 
-                    </p>
-                    <div class="placeholder h-100"  id="surveys-table">
-                        <!-- JS: таблица статичных опросов -->
-                        [Таблица: Название опроса | Статус (Активен/Неактивен) | ? Действие (Редактировать)]
                     </div>
                 </div>
             </section>
@@ -169,5 +117,8 @@
             </section>
         </main>
     </div>
+
+    <script src="js/profile-load.js"></script>
+    <script src="js/profile-activities.js"></script>
 </body>
 </html>

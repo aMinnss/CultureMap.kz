@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAdmin | Опросы</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <a href="#" class="logo">CultureMap</a>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="dashboard-superadmin.html#analytics-panel">Аналитика</a></li>
+                        <li class="active"><a href="survey.html">Опросы</a></li>
+                        <li class="sidebar-divider"><a href="users-pending.html">Запросы</a></li>
+                        <li><a href="users-confirmed.html">Пользователи</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="user-profile-card" id="user-profile">
+                <h3 id="admin-username">Глобальный Админ</h3>
+                <p id="admin-organization">Организация: CultureMap HQ</p>
+                <p id="admin-control-region">Контроль: Все города</p>
+                <span id="admin-role" class="role-tag bg-danger-light text-white">SuperAdmin</span>
+                <a href="index.html" class="logout-btn" id="logout-btn">Выйти</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2 id="surveys-title">Управление статичными опросами</h2>
+
+                <div class="card grid-span-all">
+                    <a href="survey-create.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
+                        Создать опрос
+                    </a>
+                    <a href="survey-edit.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
+                        Редактировать опрос
+                    </a>
+                </div>
+
+            <div class="full-panel">
+                <h3 id="surveys-subtitle">Добавление/Редактирование опроса</h3>
+                <p class="text-secondary"  id="surveys-description">
+                    Здесь управляются встроенные опросы сайта. 
+                </p>
+                <div class="placeholder h-100"  id="surveys-table">
+                    <!-- JS: таблица статичных опросов -->
+                    [Таблица: Название опроса | Статус (Активен/Неактивен) | ? Действие (Редактировать)]
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
