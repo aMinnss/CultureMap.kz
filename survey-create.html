@@ -18,9 +18,9 @@
                 <nav class="sidebar-nav">
                     <ul>
                         <li class="active"><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
-                        <li><a href="dashboard-superadmin.html#news-panel">Новости</a></li>
+                        <li><a href="news.html">Новости</a></li>
                         <li><a href="dashboard-superadmin.html#analytics-panel">Аналитика</a></li>
-                        <li><a href="dashboard-superadmin.html#surveys-panel">Опросы</a></li>
+                        <li class="active"><a href="survey.html">Опросы</a></li>
                         <li class="sidebar-divider"><a href="users-pending.html">Запросы</a></li>
                         <li><a href="users-confirmed.html">Пользователи</a></li>
                     </ul>
@@ -37,88 +37,105 @@
         <main class="main-content">
             <h1>Создание опроса</h1>
             
-            <div class="max-w-900 m-auto m-b-30">
+            <div class="full-panel max-w-900 m-auto m-b-30">
                 <form action="#" method="POST" id="survey-editor-form">
                     <!-- Backend  заменит action на реальный маршрут -->
 
                     <div class="full-panel">
                         <div class="form-group">
-                            <label for="title">Заголовок опроса</label>
+                            <label>Заголовок опроса</label>
                             <input 
-                            type="text" 
-                            id="title" 
-                            name="survey_title"
-                            placeholder="Заголовок опроса" 
-                            required>
+                                type="text" 
+                                id="survey-title" 
+                                name="survey_title"
+                                placeholder="Заголовок опроса" 
+                                required
+                            >
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Подзаголовок</label>
+                            <label>Подзаголовок</label>
                             <input 
-                            type="text" 
-                            id="title" 
-                            name="survey_subtitle"
-                            placeholder="Подзаголовок" 
-                            required>
+                                type="text" 
+                                id="survey-subtitle" 
+                                name="survey_subtitle"
+                                placeholder="Подзаголовок" 
+                                required
+                            >
                         </div>
                     </div>
 
-                    <div class="full-panel">
-                        <div class="form-group full-panel">
-                            <label for="title">Название секции</label>
-                            <input 
-                            type="text" 
-                            id="title" 
-                            name="section_title_1"
-                            placeholder="Название секции" 
-                            required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="title">Название вопроса</label>
-                            <input 
-                            type="text" 
-                            name="q_text_1" 
-                            class="q-edit-text" 
-                            placeholder="Текст вопроса">
-                            <div class="q-type-select-wrapper">
-                                <select name="q_type_1" class="q-type-select">
-                                    <option value="radio">Один вариант (Radio)</option>
-                                    <option value="checkbox">Несколько (Checkbox)</option>
-                                    <option value="text">Текстовый ответ</option>
-                                </select>
+                    <div id="sections-container">
+                        <div class="full-panel survey-section">
+                            <div class="form-group full-panel">
+                                <label>Название секции</label>
+                                <input 
+                                class="section-title"
+                                type="text"
+                                name="section_title"
+                                placeholder="Название секции" 
+                                required>
                             </div>
-                        </div>
 
-                        <div class="form-group flex-group align-center gap-8px">
-                            <input 
-                            type="text" 
-                            name="option_1_1" 
-                            class="option-text-input "
-                            placeholder="Текст варианта ответа">
-                            <button type="button" class="delete-btn">
-                                <span class="symbol-btn">×</span>
-                                <span class="btn-text">Удалить</span>
-                            </button>
-                            <button type="button" class="add-btn">
-                                <span class="symbol-btn">+</span>
-                                <span class="btn-text">Добавить</span>
-                            </button>
-                        </div>
+                            <div class="questions-container">
+                                <div class="survey-question">
+                                    <div class="form-group">
+                                        <label>Текст вопроса</label>
+                                        <input 
+                                            type="text" 
+                                            name="q_text_1" 
+                                            class="q-edit-text question-text" 
+                                            placeholder="Текст вопроса"
+                                        >
+                                    </div>
+                                    <div class="form-group q-type-select-wrapper">
+                                        <select class="q-type-select question-type">
+                                            <option value="radio">Один вариант (Radio)</option>
+                                            <option value="checkbox">Несколько (Checkbox)</option>
+                                            <option value="text">Текстовый ответ</option>
+                                        </select>
+                                    </div>
 
-                        <div>
-                            <button type="button" class="btn">
-                                Удалить вопрос
-                            </button>
-                            <button type="button" class="btn">
-                                Добавить вопрос в секцию
-                            </button>
+                                    <!-- <div class="form-group flex-group align-center gap-8px"> -->
+                                        <div class="options-container">
+                                            <div class="option-item">
+                                                <input 
+                                                    type="text" 
+                                                    name="option_1_1" 
+                                                    class="option-text-input"
+                                                    placeholder="Текст варианта ответа"
+                                                >
+                                                <button type="button" class="delete-option-btn delete-btn">
+                                                    <span class="symbol-btn">×</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="question-actions"> -->
+                                            <button type="button" class="add-option-btn add-btn">
+                                                <span class="symbol-btn">+</span>
+                                                <span class="btn-text">Добавить вариант</span>
+                                            </button>
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                </div>
+                                <div>
+                                    <button type="button" class="delete-question-btn btn">
+                                        Удалить вопрос
+                                    </button>
+                                    <button type="button" class="add-question-btn btn">
+                                        Добавить вопрос в секцию
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                         
-                    <div class="text-center m-t-40">
+                    <div class="form-footer text-center editor-footer m-t-40s">
                         <button type="button" class="add-section-btn">
                             Добавить секцию
+                        </button>
+                        <button type="button" class="delete-section-btn">
+                            Удалить секцию
                         </button>
                     </div>
 
@@ -136,5 +153,12 @@
         </main>
     </div>
 
+    <script src="js/survey-create.js"></script>
 </body>
 </html>
+
+<!-- #survey-editor-form — один корневой form 
+#sections-container — контейнер для секций 
+.survey-section — одна секция (шаблон) 
+.survey-question — один вопрос (шаблон) 
+.options-container — контейнер вариантов  -->

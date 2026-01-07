@@ -17,9 +17,9 @@
                 <nav class="sidebar-nav">
                     <ul>
                         <li class="active"><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
+                        <li><a href="analytics.html">Аналитика</a></li>
                         <li><a href="news.html">Новости</a></li>
-                        <li><a href="dashboard-superadmin.html#analytics-panel">Аналитика</a></li>
-                        <li><a href="dashboard-superadmin.html#surveys-panel">Опросы</a></li>
+                        <li><a href="survey.html">Опросы</a></li>
                         <li class="sidebar-divider"><a href="users-pending.html">Запросы</a></li>
                         <li><a href="users-confirmed.html">Пользователи</a></li>
                     </ul>
@@ -53,7 +53,7 @@
 
             <!-- PANEL 2 -->
             <section id="main-panel">
-                <h2>Управление городами и пользователями</h2> 
+                <h2>Управление городами</h2> 
 
                 <!-- Управление городами -->
                 <div class="full-panel">
@@ -61,57 +61,6 @@
                     <div class="placeholder h-100">
                         <!-- JS: список городов -->
                         [Таблица: Алматы (Активен) | Конаев (Активен) | Добавить новый город]
-                    </div>
-                </div>
-            </section>
-
-            <!-- PANEL 4 — Аналитика -->
-            <section id="analytics-panel" class="m-t-40">
-                <h2 id="global-analytics-title">Глобальная Аналитика</h2>
-
-                <div class="full-panel-container">
-
-                    <!-- Навигация вкладок -->
-                    <div class="tab-nav"  id="analytics-tabs">
-                        <a href="#" class="active" id="tab-general-analytics">Общая сводная аналитика</a>
-                        <a href="#" id="tab-ai-settings">Настройки опросов и AI-модулей</a>
-                    </div>
-                    
-                    <div class="tab-content">
-
-                        <!-- Общая аналитика -->
-                        <h3 class="analysis-type-header" id="summary-analytics-title">
-                            Сводная аналитика по всем городам
-                        </h3>
-
-                        <div class="content-grid">
-                            <div class="card">
-                                <h4 id="system-metrics-title">Метрики системы</h4>
-                                <div class="placeholder h-100" id="system-metrics-chart">
-                                    <!-- График -->
-                                    [График: Общая динамика анализов]
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <h4 id="city-comparison-title">Сравнение городов</h4>
-                                <div class="placeholder h-100" id="city-comparison-chart">
-                                    <!-- Диаграмма -->
-                                    [Диаграмма: Алматы vs Конаев по активности]
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Настройки AI -->
-                        <div class="m-t-40">
-                            <h3 class="analysis-type-header" id="ai-settings-title">
-                                Настройки AI-модулей и опросов
-                            </h3>
-                            <div class="placeholder h-100" id="ai-settings-panel">
-                                <!-- Данные -->
-                                [Панель управления весами ИИ, источниками данных, API-ключами]
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

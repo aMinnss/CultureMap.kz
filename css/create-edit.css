@@ -88,7 +88,8 @@ justify-content: center;
 }
 
 /* Контейнер новостей в админке */
-.admin-news-feed {
+.admin-news-feed,
+.admin-surveys-feed {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
@@ -126,17 +127,20 @@ justify-content: center;
     color: #555;
 }
 
-.admin-news-title {
+.admin-news-title,
+.admin-survey-title {
     font-size: 1.1rem;
     margin: 5px 0;
 }
 
-.admin-news-summary {
+.admin-news-summary,
+.admin-survey-description {
     font-size: 0.9rem;
     color: #333;
 }
 
-.admin-news-status {
+.admin-news-status,
+.admin-survey-status {
     font-size: 0.85rem;
     color: #777;
     margin-top: 5px;
@@ -149,7 +153,8 @@ justify-content: center;
     margin-top: auto; /* Кнопки всегда внизу карточки */
 }
 
-.admin-news-actions button {
+.admin-news-actions button,
+.admin-survey-actions button {
     flex: 1;
     padding: 6px 10px;
     border: none;
@@ -157,17 +162,20 @@ justify-content: center;
     cursor: pointer;
 }
 
-.admin-news-actions .edit-btn {
+.admin-news-actions .edit-btn,
+.admin-survey-actions .edit-survey-btn {
     background-color: var(--color-info);
     color: white;
 }
 
-.admin-news-actions .delete-btn {
+.admin-news-actions .delete-btn,
+.admin-survey-actions .delete-survey-btn {
     background-color: var(--color-danger);
     color: white;
 }
 
-.admin-news-card-draft {
+.admin-news-card-draft,
+.admin-survey-card-draft {
     opacity: 0.6;        /* слегка прозрачная */
     border: 2px dashed #999; /* пунктирная рамка */
 }

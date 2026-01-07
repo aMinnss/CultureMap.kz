@@ -56,6 +56,7 @@
 }
 
 .add-section-btn,
+.delete-section-btn,
 .draft-btn,
 .cancel-btn,
 .lang-btn,
@@ -73,6 +74,7 @@
 }
 
 .add-section-btn:hover,
+.delete-section-btn:hover,
 .draft-btn:hover,
 .cancel-btn:hover,
 .lang-btn:hover,
@@ -95,7 +97,7 @@
 .add-btn:hover .btn-text,
 .delete-btn:hover .btn-text {
   opacity: 1;
-  max-width: 80px;
+  max-width: 140px;
 }
 
 .btn-text {

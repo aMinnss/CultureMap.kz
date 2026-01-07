@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/create-edit.css">
 </head>
 <body>
 
@@ -36,28 +37,35 @@
         </aside>
 
         <main class="main-content">
-            <h2 id="surveys-title">Управление статичными опросами</h2>
+            <h2 id="surveys-title">Управление опросами</h2>
+                <div class="full-panel">
+                    <div class="card grid-span-all">
+                        <a href="survey-create.html" id="survey-create-btn" class="btn text-decoration-none display-block text-center">
+                            Создать опрос
+                        </a>
+                        <!-- <a href="survey-edit.html" id="survey-edit-btn" class="btn text-decoration-none display-block text-center">
+                            Редактировать опрос
+                        </a> -->
+                    </div>
 
-                <div class="card grid-span-all">
-                    <a href="survey-create.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
-                        Создать опрос
-                    </a>
-                    <a href="survey-edit.html" id="news-create-btn" class="btn text-decoration-none display-block text-center">
-                        Редактировать опрос
-                    </a>
-                </div>
+                    <div class="card">
+                        <h3 id="published-surveys-title">Актуальные опросы</h3>
+                        <div class="admin-surveys-feed"  id="published-surveys-list">
+                            <!-- JS: список новостей -->
+                            [Список опубликованных опросов (Редактировать)]
+                        </div>
+                    </div>
 
-            <div class="full-panel">
-                <h3 id="surveys-subtitle">Добавление/Редактирование опроса</h3>
-                <p class="text-secondary"  id="surveys-description">
-                    Здесь управляются встроенные опросы сайта. 
-                </p>
-                <div class="placeholder h-100"  id="surveys-table">
-                    <!-- JS: таблица статичных опросов -->
-                    [Таблица: Название опроса | Статус (Активен/Неактивен) | ? Действие (Редактировать)]
+                    <div class="card">
+                        <h3 id="draft-surveys-title">Черновики</h3>
+                        <div class="placeholder h-100" id="draft-surveys-list">
+                            [Список черновиков]
+                        </div>
+                    </div>
                 </div>
-            </div>
         </main>
     </div>
+
+    <script src="js/surveys-admin-list.js"></script>
 </body>
 </html>
