@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar | боковая панель</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <a href="#" class="logo">CultureMap</a>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
+                    <li><a href="analytics.html">Аналитика</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="survey.html">Опросы</a></li>
+                    <li><a href="users-pending.html">Запросы</a></li>
+                    <li><a href="users-confirmed.html">Пользователи</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="user-profile-card" id="user-profile">
+            <h3 id="profile-username">Глобальный Админ</h3>
+            <p id="profile-organization">Организация: CultureMap HQ</p>
+            <span id="profile-role" class="role-tag bg-danger-light text-white">SuperAdmin</span>
+            <a href="index.html" class="logout-btn" id="logout-btn">Выйти</a>
+        </div>
+    </aside>
+
+</body>
+</html>

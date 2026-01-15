@@ -7,37 +7,90 @@
     
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/map-analytics.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 </head>
 <body>
 
     <div class="dashboard-layout">
-        <aside class="sidebar">
-            <div class="sidebar-top">
-                <a href="#" class="logo">CultureMap</a>
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li class="active"><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
-                        <li><a href="analytics.html">Аналитика</a></li>
-                        <li><a href="news.html">Новости</a></li>
-                        <li><a href="survey.html">Опросы</a></li>
-                        <li class="sidebar-divider"><a href="users-pending.html">Запросы</a></li>
-                        <li><a href="users-confirmed.html">Пользователи</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="user-profile-card" id="user-profile">
-                <h3 id="profile-username">Глобальный Админ</h3>
-                <p id="profile-organization">Организация: CultureMap HQ</p>
-                <span id="profile-role" class="role-tag bg-danger-light text-white">SuperAdmin</span>
-                <a href="index.html" class="logout-btn" id="logout-btn">Выйти</a>
-            </div>
-        </aside>
 
         <main class="main-content">
             <h1>Панель SuperAdmin</h1>
 
             <!-- PANEL 1 -->
+            <section id="main-panel">
+                <h2>Карта объектов</h2> 
+                <div class="full-panel">
+                <h3 id="city-management-title">Карта</h3>
+
+                <!-- Фильтры -->
+                <div id="filters">
+                    <label for="category-filter">Категория:</label>
+                    <select id="category-filter">
+                        <option value="all">Все</option>
+                        <option value="theatre">Театр</option>
+                        <option value="museum">Музей</option>
+                        <option value="library">Библиотека</option>
+                    </select>
+                </div>
+
+                <!-- 🔥 ВОТ ОН, FLEX-КОНТЕЙНЕР -->
+                <div class="map-analytics-layout">
+
+                    <!-- 3/5 — Карта -->
+                    <div class="map-wrapper">
+                        <div id="map"></div>
+                    </div>
+
+                    <!-- 2/5 — Аналитика -->
+                    <aside class="analytics-wrapper">
+                        <h3>Информация о районе</h3>
+
+                        <div class="analytics-section">
+                            <p class="label">Адрес</p>
+                            <p id="ai-address" class="value muted">
+                                Выберите точку на карте
+                            </p>
+                        </div>
+
+                        <div class="analytics-section">
+                            <p class="label">ИИ-анализ</p>
+                            <p id="ai-analysis" class="value muted">
+                                Анализ будет доступен после выбора района
+                            </p>
+                        </div>
+
+                        <div class="analytics-section">
+                            <p class="label">Объекты поблизости</p>
+                            <div id="ai-places" class="places-list muted">
+                                Нет данных
+                            </div>
+                        </div>
+
+                        <button id="analyze-btn" disabled class="primary-btn">
+                            Получить ИИ-анализ
+                        </button>
+                    </aside>
+
+                </div>
+            </div>    
+
+                    <!-- Карточка объекта -->
+                    <div id="object-card" class="object-card hidden">
+                        <h3 id="card-title">Название объекта</h3>
+                        <p><strong>Категория:</strong> <span id="card-category"></span></p>
+                        <p><strong>Город:</strong> <span id="card-city"></span></p>
+
+                        <button id="close-card">Закрыть</button>
+                    </div>
+                </div>
+                <div class="full-panel">
+                    <h3>Диаграмма объектов по категориям</h3>
+                    <canvas id="objectsChart" height="120"></canvas>
+                </div>
+            </section>
+
+            <!-- PANEL 2 -->
             <section id="main-panel">
                 <h2>Активность пользователей</h2> 
 
@@ -66,7 +119,12 @@
             </section>
         </main>
     </div>
-
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/map.js  "></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/places-ai.js"></script>
     <script src="js/profile-load.js"></script>
     <script src="js/profile-activities.js"></script>
 </body>

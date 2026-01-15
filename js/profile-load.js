@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            // throw new Error(`HTTP error! status: ${response.status}`);
+            console.warn('Профиль временно недоступен:', response.status);
+            return; // ВАЖНО — не бросаем ошибку
         }
 
         const data = await response.json();
@@ -28,8 +30,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         const orgElem = document.getElementById('personal-organization') || document.getElementById('profile-organization');
         if (orgElem) orgElem.textContent = data.organization ? `Организация: ${data.organization}` : '';
 
+        const roleMap = {
+            admin: 'Супер Админ',
+            akimat: 'Акимат',
+            organizer: 'Организатор'
+        };
+
         const roleElem = document.getElementById('user-personal') || document.getElementById('profile-role');
-        if (roleElem) roleElem.textContent = data.role || 'Пользователь'; // подставляем готовую роль
+        if (roleElem) {
+            roleElem.textContent = roleMap[data.role] || data.role || 'Пользователь';
+        } // подставляем готовую роль
 
         // --- Location fields ---
         const districtElem = document.getElementById('personal-district');

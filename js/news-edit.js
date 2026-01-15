@@ -72,6 +72,7 @@ console.log('TOKEN:', token);
     formData.append('author', authorInput.value);
     formData.append('category', categoryInput.value);
     formData.append('status', statusInput.value);
+    formData.append('project_id', 1);
 
     const imageFile = imageInput.files[0];
     if (imageFile) {

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAdmin | Личный кабинет</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+
+        <main class="main-content">
+            <!-- PANEL 4 — Аналитика -->
+            <section id="analytics-panel" class="m-t-40">
+                <h2 id="global-analytics-title">Глобальная Аналитика</h2>
+
+                <div class="full-panel-container">
+
+                    <!-- Навигация вкладок -->
+                    <div class="tab-nav"  id="analytics-tabs">
+                        <a href="#" class="active" id="tab-general-analytics">Общая сводная аналитика</a>
+                        <a href="#" id="tab-ai-settings">Настройки опросов и AI-модулей</a>
+                    </div>
+                    
+                    <div class="tab-content">
+
+                        <!-- Общая аналитика -->
+                        <h3 class="analysis-type-header" id="summary-analytics-title">
+                            Сводная аналитика по всем городам
+                        </h3>
+
+                        <div class="content-grid">
+                            <div class="card">
+                                <h4 id="system-metrics-title">Метрики системы</h4>
+                                <div class="placeholder h-100" id="system-metrics-chart">
+                                    <!-- График -->
+                                    [График: Общая динамика анализов]
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <h4 id="city-comparison-title">Сравнение городов</h4>
+                                <div class="placeholder h-100" id="city-comparison-chart">
+                                    <!-- Диаграмма -->
+                                    [Диаграмма: Алматы vs Конаев по активности]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Настройки AI -->
+                        <div class="m-t-40">
+                            <h3 class="analysis-type-header" id="ai-settings-title">
+                                Настройки AI-модулей и опросов
+                            </h3>
+                            <div class="placeholder h-100" id="ai-settings-panel">
+                                <!-- Данные -->
+                                [Панель управления весами ИИ, источниками данных, API-ключами]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/sidebar.js"></script>
+</body>
+</html>

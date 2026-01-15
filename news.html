@@ -13,29 +13,6 @@
 <body>
 
     <div class="dashboard-layout">
-        <aside class="sidebar">
-            <div class="sidebar-top">
-                <a href="#" class="logo">CultureMap</a>
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li><a href="dashboard-superadmin.html#main-panel">Главная</a></li>
-                        <li class="active"><a href="news.html">Новости</a></li>
-                        <li><a href="dashboard-superadmin.html#analytics-panel">Аналитика</a></li>
-                        <li><a href="survey.html">Опросы</a></li>
-                        <li class="sidebar-divider"><a href="users-pending.html">Запросы</a></li>
-                        <li><a href="users-confirmed.html">Пользователи</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="user-profile-card" id="user-profile">
-                <h3 id="admin-username">Глобальный Админ</h3>
-                <p id="admin-organization">Организация: CultureMap HQ</p>
-                <p id="admin-control-region">Контроль: Все города</p>
-                <span id="admin-role" class="role-tag bg-danger-light text-white">SuperAdmin</span>
-                <a href="index.html" class="logout-btn" id="logout-btn">Выйти</a>
-            </div>
-        </aside>
 
         <main class="main-content">
             <h2 id="news-title">Управление новостями и контентом</h2>
@@ -64,6 +41,7 @@
         </main>
     </div>
 
+    <script src="js/sidebar.js"></script>
     <script src="js/news-admin-list.js"></script>
 </body>
 </html>
